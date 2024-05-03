@@ -1,5 +1,5 @@
 # Use a small base image for production
-FROM node:14-alpine AS build
+FROM node:13-alpine AS build
 
 # Set working directory
 WORKDIR /yolo_client
