@@ -25,12 +25,9 @@ services:
       - "27019:27017"
     restart: always
     volumes:
-      - yolomy:/data/db
+      - /var/opt/yolomy:/data/db
     networks:
       - app_network
-
-volumes:
-  yolomy:
 
 networks:
   app_network:
