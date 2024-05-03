@@ -1,0 +1,38 @@
+services:
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - ./frontend:/app
+    networks:
+      - app_network
+
+  api:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    restart: always
+    environment:
+      DB_URL: mongodb://db/yolomy
+    networks:
+      - app_network
+
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - "27019:27017"
+    restart: always
+    volumes:
+      - yolomy:/data/db
+    networks:
+      - app_network
+
+volumes:
+  yolomy:
+
+networks:
+  app_network:
+    driver: bridge
+
