@@ -2,7 +2,7 @@ services:
   client:
     build: ./client
     ports:
-      - "3000:3000"
+      - "3008:3008"
     restart: always
     volumes:
       - ./frontend:/app
@@ -12,7 +12,7 @@ services:
   api:
     build: ./backend
     ports:
-      - "3001:3001"
+      - "5000:5000"
     restart: always
     environment:
       DB_URL: mongodb://db/yolomy
