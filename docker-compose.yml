@@ -1,6 +1,8 @@
 services:
   client:
+    container_name: client
     build: ./client
+    image: yolo_client:${client_tag}
     ports:
       - "3008:3008"
     restart: always
@@ -10,7 +12,9 @@ services:
       - app_network
 
   api:
+    container_name: api
     build: ./backend
+    image: yolo_api:${api_tag}
     ports:
       - "5000:5000"
     restart: always
@@ -20,6 +24,7 @@ services:
       - app_network
 
   db:
+    container_name: db
     image: mongo:4.0-xenial
     ports:
       - "27019:27017"
@@ -32,4 +37,3 @@ services:
 networks:
   app_network:
     driver: bridge
-
