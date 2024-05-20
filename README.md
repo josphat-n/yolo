@@ -21,5 +21,5 @@ Make sure that you have the following installed and correctly configured:
 
 ## Interacting with the application
 
-- Open your favourite browser and type in `http://localhost:3008`.
+- Open your favourite browser and type in `http://localhost:3000`.
 - Go ahead and add a product (note that the price field only takes a numeric input). You should also view all added products.
