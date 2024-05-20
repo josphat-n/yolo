@@ -13,5 +13,7 @@ RUN npm install --production
 # Copy the rest of the application
 COPY . .
 
+EXPOSE 5000
+
 # Command to start the frontend server
 CMD ["npm", "start"]
